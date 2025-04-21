@@ -1,4 +1,7 @@
 def convert_units(value, from_unit, to_unit):
+    from_unit = from_unit.lower()
+    to_unit = to_unit.lower()
+    
     conversion_factors = {
         ('kilometers', 'miles'): 0.621371,
         ('miles', 'kilometers'): 1.60934,
@@ -15,4 +18,3 @@ def convert_units(value, from_unit, to_unit):
         return factor(value) if callable(factor) else value * factor
     else:
         return "Conversion not supported"
-
